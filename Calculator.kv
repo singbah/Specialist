@@ -1,0 +1,119 @@
+<But@Button>:
+    text: '0'
+    font_size: 32
+    background_color: (0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: [23/255,118/255,195/255,1]
+        RoundedRectangle:
+            size: self.size[0], self.size[1]
+            pos: self.pos
+            radius: [50]
+
+MDScreenManager
+    MainBoard:
+        name: 'first'
+
+<MainBoard>:
+    padding: 2
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: 2
+
+        TextInput:
+            id: calc_text
+            hint_text: '0'
+            valigh: 'right'
+            haligh: 'right'
+            font_size: 63
+            size_hint_y: None
+            height: root.height /2 -50
+            
+        
+        MDGridLayout:
+            cols: 4
+            spacing: 3
+            padding: 3
+
+            But:
+                text: 'C'
+                on_press: root.Clear()
+
+            But:
+                text: 'CL'
+                on_press: root.Remove()
+
+            But:
+                text: '%'
+                on_press: root.mathematic('%')
+
+            But:
+                text: '/'
+                on_press: root.mathematic('/')
+
+            But:
+                text: '7'
+                on_press: root.Add_num('7')
+
+            But:
+                text: '8'
+                on_press: root.Add_num('8')
+
+            But:
+                text: '9'
+                on_press: root.Add_num('9')
+
+
+            But:
+                text: 'x'
+                on_press: root.mathematic('*')
+
+            But:
+                text: '4'
+                on_press: root.Add_num('4')
+
+            But:
+                text: '5'
+                on_press: root.Add_num('5')
+
+            But:
+                text: '6'
+                on_press: root.Add_num('6')
+
+            But:
+                text: '-'
+                on_press: root.mathematic('-')
+
+            But:
+                text: '1'
+                on_press: root.Add_num('1')
+
+            But:
+                text: '2'
+                on_press: root.Add_num('2')
+
+            But:
+                text: '3'
+                on_press: root.Add_num('3')
+
+            But:
+                text: '+'
+                on_press: root.mathematic('+')
+
+            But:
+                text: '-/+'
+                on_press: root.Special_sign('+')
+
+            But:
+                text: '0'
+                on_press: root.Add_num('0')
+
+            But:
+                text: '.'
+                on_press: root.mathematic('.')
+
+            But:
+                text: '='
+                on_press: root.calculate()
+            
